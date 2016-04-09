@@ -1,0 +1,150 @@
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+// Resets
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+// Globals
+.row, .column {
+	display: flex;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.center {
+	justify-content: center;
+}
+
+.column-center {
+	align-items: center;
+}
+
+.split {
+	justify-content: space-between;
+}
+
+.split-center {
+	justify-content: space-around;
+}
+
+.right {
+	align-self: flex-end;
+}
+
+.bottom {
+	align-items: flex-end;
+}
+
+.hide {
+	display: none;
+}
+
+// Animations
+@keyframes logoSlideIn {
+	0%, 40% {
+		transform: translate(-160%);
+	}
+	100% {
+		transform: translate(0);
+	}
+}
+
+@keyframes navSlideIn {
+	0%, 40% {
+		transform: translate(110%);
+	}
+	100% {
+		transform: translate(0);
+	}
+}
+
+.Start {
+	&__logo {
+		animation: logoSlideIn 1s;
+		width: 90px;
+		fill: #fff;
+	}
+	header {
+		padding: 17px 4% 0;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+	}
+	nav {
+		animation: navSlideIn 1s;
+		a {
+			margin-left: 15px;
+			position: relative;
+			&:not(:last-child):before {
+				content: '';
+				height: 1px;
+				background: #fff;
+				width: 100%;
+				position: absolute;
+				bottom: -10px;
+				left: 0;
+				transform: scaleX(0);
+				transform-origin: center right;
+				transition: transform .3s;
+			}
+			&:not(:last-child):hover:before {
+				transform-origin: center left;
+				transform: scaleX(1);
+			}
+			&:last-child {
+				border: 2px solid #fff;
+				padding: 3px 18px 8px 15px; 
+				border-radius: 2px;
+				position: relative;
+				&:hover {
+					color: rgb(93, 193, 175);
+				}
+				&:before {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					background: #fff;
+					z-index: -1;
+					transform: scaleX(0);
+					transition: transform .3s;
+					transform-origin: top left;
+				}
+				&:hover:before {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 90vh;
+		background: rgb(93, 193, 175);
+		z-index: -1;
+	}
+}
