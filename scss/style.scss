@@ -1,4 +1,8 @@
-	// Fonts
+// Variables
+$green: rgb(93, 193, 175);
+$lato: 'Lato', sans-serif;
+
+// Fonts
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
 
 // Resets
@@ -23,6 +27,10 @@ img {
 a {
 	color: #fff;
 	text-decoration: none;
+}
+
+button {
+	outline: none;
 }
 
 // Globals
@@ -89,7 +97,7 @@ a {
 	}
 	header {
 		padding: 17px 4% 0;
-		font-family: 'Lato', sans-serif;
+		font-family: $lato;
 		font-weight: 300;
 	}
 	nav {
@@ -119,7 +127,7 @@ a {
 				border-radius: 2px;
 				position: relative;
 				&:hover {
-					color: rgb(93, 193, 175);
+					color: $green;
 				}
 				&:before {
 					content: '';
@@ -143,7 +151,7 @@ a {
 
 	.start-hero {
 		padding-top: 300px;
-		padding-bottom: 300px;
+		padding-bottom: 200px;
 		text-align: center;
 		overflow: hidden;
 		.second {
@@ -164,7 +172,7 @@ a {
 			}
 		}
 		h1 {
-			font-family: 'Lato', sans-serif;
+			font-family: $lato;
 			font-weight: 100;
 			color: white;
 			font-size: 1.5em;
@@ -175,24 +183,32 @@ a {
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background: rgb(93, 193, 175);
+		background: $green;
 		z-index: -1;
 	}
 }
 
 .skype {
-	margin-top: 150px;
-	margin-bottom: 300px;
+	//margin-top: 150px;
+	//margin-bottom: 300px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
 	clear: both;
 	overflow: hidden;
 	h1 {
-		font-family: 'Lato', sans-serif;
+		margin: 0 auto;
+		font-family: $lato;
 		font-weight: 900;
-		text-align: left;
+		display: flex;
+    	align-items: center;
+    	justify-content: center;
 		color: gray;
 	}
 	p {
-		font-family: 'Lato', sans-serif;
+		margin: 0 auto;
+		text-align: center;
+		font-family: $lato;
 		padding-top: 20px;
 		max-width: 400px;
 	}
@@ -206,80 +222,89 @@ a {
 		width: 200px;
 		padding: 20px;
 		border: 2px solid white;
-		background: rgb(93, 193, 175);
-		transition-property: background;
-		transition-duration: .5s;
-		transition-timing-function: linear;
+		background: $green;
+		transition: background .5s linear;
 	}
 	button:hover {
-				  border: 2px solid rgb(93, 193, 175);
-				  color: rgb(93, 193, 175);
-				  background: white;
-				}
+		border: 2px solid $green;
+		color: $green;
+		background: white;
+	}
 	.green_bg {
-		margin-top: -400px;
-		background-color: rgb(93, 193, 175);
+		margin-bottom: 0;
+		margin-top: -380px;
+		background-color: $green;
 		width: 100%;
-		height: 1200px;
+		height: 1100px;
+		position: relative;
+		z-index: -1;
 	}
 	.slack {
 		display: flex;
-	   	flex-direction: column;
-		align-items: flex-end;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 0;
 		margin-top: -650px;
-			h1 {
-				color: white;
-			}
-			p {
-				color: white;
-				text-align: right;
-			}
-			.second_btn {
-				border: 2px solid white;
-				background: none;
-				transition-property: background;
-				transition-duration: .5s;
-				transition-timing-function: linear;
-				}
-				.second_btn:hover {
-				  color: rgb(93, 193, 175);
-				  background: white;
-				}
+		h1 {
+			color: white;
+			text-align: center;
+		}
+		p {
+			color: white;
+			text-align: center;;
+		}
+		.second_btn {
+			border: 2px solid white;
+			background: none;
+			transition: background .5s linear;
+		}
+		.second_btn:hover {
+			color: $green;
+			background: white;
+		}
 	}
 }
 .angle {
-	margin-top: 50px;
-	position: absolute;
+	margin-top: 140px;
+	//position: absolute;
+	display: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 0;
 	h1 { 
 		color: gray;
-		font-family: 'Lato', sans-serif;
-		max-width: 350px;
-		margin-left: 320px;
-		margin-bottom: -350px;
+		font-family: $lato;
+		//max-width: 350px;
+    	text-align: center;
+		//margin-left: 320px;
+		//margin-bottom: -350px;
 	}
 	p {
-		padding-top: 30px;
-		line-height: 200%;
-		font-family: 'Lato', sans-serif;
-		max-width: 500px;
-		margin-left: 320px;
+		margin-top: 30px;
+		text-align: center;
+
+		//padding-top: 30px;
+		//line-height: 200%;
+		font-family: $lato;
+		//max-width: 500px;
+		//margin-left: 320px;
 	}
 	.phone {
 		
-			//width: 100%;
-			height: 0px;
-			margin-top: -40; 
-			border-left: 2000px solid transparent;
-			border-right: 150px solid trasnsparent;
-			border-bottom: 350px solid rgb(93, 193, 175);
-		}
-		img {
-			height: 800px;
-			position: relative;
-   			top: 30px;
-   			margin-bottom: -450px;
-   			right: -756px;
-		 } 
+		//width: 100%;
+		margin-top: -352px;
+		height: 0px;
+		border-left: 2000px solid transparent;
+		border-right: 150px solid transparent;
+		border-bottom: 350px solid $green;
+	}
+	img {
+		//height: 800px;
+		//position: relative;
+		top: 30px;
+		//margin-bottom: -450px;
+		//right: -756px;
+	} 
 }
 
 
