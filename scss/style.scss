@@ -1,3 +1,7 @@
+// Variables
+$green: rgb(93, 193, 175);
+$lato: 'Lato', sans-serif;
+
 // Fonts
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
 
@@ -23,6 +27,10 @@ img {
 a {
 	color: #fff;
 	text-decoration: none;
+}
+
+button {
+	outline: none;
 }
 
 // Globals
@@ -81,4 +89,202 @@ a {
 	}
 }
 
-@import 'start';
+.Start {
+	&__logo {
+		animation: logoSlideIn 1s;
+		width: 90px;
+		fill: #fff;
+	}
+	header {
+		padding: 17px 4% 0;
+		font-family: $lato;
+		font-weight: 300;
+	}
+	nav {
+		animation: navSlideIn 1s;
+		a {
+			margin-left: 15px;
+			position: relative;
+			&:not(:last-child):before {
+				content: '';
+				height: 1px;
+				background: #fff;
+				width: 100%;
+				position: absolute;
+				bottom: -10px;
+				left: 0;
+				transform: scaleX(0);
+				transform-origin: center right;
+				transition: transform .3s;
+			}
+			&:not(:last-child):hover:before {
+				transform-origin: center left;
+				transform: scaleX(1);
+			}
+			&:last-child {
+				border: 2px solid #fff;
+				padding: 3px 18px 8px 15px; 
+				border-radius: 2px;
+				position: relative;
+				&:hover {
+					color: $green;
+				}
+				&:before {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+					background: #fff;
+					z-index: -1;
+					transform: scaleX(0);
+					transition: transform .3s;
+					transform-origin: top left;
+				}
+				&:hover:before {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+
+	.start-hero {
+		padding-top: 300px;
+		padding-bottom: 300px;
+		text-align: center;
+		overflow: hidden;
+		.second {
+			width: 200px;
+			fill: #fff;
+		}
+		button {
+
+			color: white;
+			font-size: 1em;
+			width: 200px;
+			padding: 20px;
+			background-color: transparent;
+			background-repeat: no-repeat;
+			border: 2px solid white;
+			span {
+				font-weight: bold;
+			}
+		}
+		h1 {
+			font-family: $lato;
+			font-weight: 100;
+			color: white;
+			font-size: 1.5em;
+			margin-top: 40px;
+		}
+	}
+	&__bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: $green;
+		z-index: -1;
+	}
+}
+
+.skype {
+	margin-top: 150px;
+	margin-bottom: 300px;
+	clear: both;
+	overflow: hidden;
+	h1 {
+		font-family: $lato;
+		font-weight: 900;
+		text-align: left;
+		color: gray;
+	}
+	p {
+		font-family: $lato;
+		padding-top: 20px;
+		max-width: 400px;
+	}
+	img {
+		padding-top: 50px;
+	}
+	button {
+		margin-top: 30px;
+		color: white;
+		font-size: 1em;
+		width: 200px;
+		padding: 20px;
+		border: 2px solid white;
+		background: $green;
+		transition: background .5s linear;
+	}
+	button:hover {
+		border: 2px solid $green;
+		color: $green;
+		background: white;
+	}
+	.green_bg {
+		margin-top: -400px;
+		background-color: $green;
+		width: 100%;
+		height: 1200px;
+		position: relative;
+		z-index: -1;
+	}
+	.slack {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		margin-top: -650px;
+		h1 {
+			color: white;
+		}
+		p {
+			color: white;
+			text-align: right;
+		}
+		.second_btn {
+			border: 2px solid white;
+			background: none;
+			transition: background .5s linear;
+		}
+		.second_btn:hover {
+			color: $green;
+			background: white;
+		}
+	}
+}
+.angle {
+	margin-top: 50px;
+	position: absolute;
+	h1 { 
+		color: gray;
+		font-family: $lato;
+		max-width: 350px;
+		margin-left: 320px;
+		margin-bottom: -350px;
+	}
+	p {
+		padding-top: 30px;
+		line-height: 200%;
+		font-family: $lato;
+		max-width: 500px;
+		margin-left: 320px;
+	}
+	.phone {
+		
+		//width: 100%;
+		height: 0px;
+		border-left: 2000px solid transparent;
+		border-right: 150px solid transparent;
+		border-bottom: 350px solid $green;
+	}
+	img {
+		height: 800px;
+		position: relative;
+		top: 30px;
+		margin-bottom: -450px;
+		right: -756px;
+	} 
+}
+
+
